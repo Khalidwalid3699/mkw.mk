@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+    background: rgb(144, 25, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin:0;
+}
+#house{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+#front{
+    height:200px;
+    width:200px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 2fr 3fr;   
+}
+.wall{
+    background: rgb(4, 221, 101);
+}
+.roof{
+    background: linear-gradient(rgb(216, 38, 6),rgb(199, 67, 15));
+}
+.sidewall{
+    background:rgb(230, 162, 18);
+}
+#front .triangle{
+    border-bottom: 80px solid rgb(4, 221, 101);
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+#front .roof{
+    transform: skewX(-37deg) translateX(38%);
+}
+#garage{
+    display: grid;
+    height: 90px;
+    width: 80px;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1.5fr 3fr; 
+    transform: translateX(40%);
+}
+#wallgarrage{
+    background:rgb(192, 178, 49);
+}
+#garage .triangle{
+    border-bottom: 30px solid rgb(236, 234, 79);
+    border-left: 32px solid transparent;
+}
+#garage .roof{
+    transform: skewX(-47deg) translateX(33%);
+}
+#top-window{
+    width:25px;
+    height:25px;
+    display: inline-block;
+    background: rgb(229, 233, 10);
+    border-radius: 100%;
+    transform: translateY(-180%);
+}
+#middle-window{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+}
+#middle-window:after,#middle-window:before{
+    content: '';
+    display: inline-block;
+    height:25px;
+    width:25px;
+    background: rgb(229, 233, 10);
+}
+#door{
+    display: inline-block;
+    height:40px;
+    width: 25px;
+    background: linear-gradient(rgb(20, 20, 18),rgb(97, 68, 15));
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    transform: translateY(75%);
+}
+#front .wall{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    </style>
+</head>
+
+<body>
+    <div id="house">
+        <div id='front'>
+          <span class="roof"></span>
+          <span class="triangle"></span>
+          <span class="sidewall"></span>
+          <div class="wall">
+            <span id="top-window"></span>
+            <span id="middle-window"></span>
+            <span id="door"></span>
+          </div>
+        </div>
+        <div id='garage'>
+          <span class="roof"></span>
+          <span class="triangle"></span>
+          <span class="sidewall"></span>
+          <div class="wallgarrage"></div>
+        </div>
+      </div>
+
+
+</body>
+
+</html>
